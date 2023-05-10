@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit8a591507754f0b39ac364b210a07e455
+class ComposerStaticInitd4b34ef4f7c6348b1b01bb29d0a2905e
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -344,8 +344,8 @@ class ComposerStaticInit8a591507754f0b39ac364b210a07e455
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -2505,6 +2505,7 @@ class ComposerStaticInit8a591507754f0b39ac364b210a07e455
         'Illuminate\\Queue\\SerializesModels' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/SerializesModels.php',
         'Illuminate\\Queue\\SqsQueue' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/SqsQueue.php',
         'Illuminate\\Queue\\SyncQueue' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/SyncQueue.php',
+        'Illuminate\\Queue\\TimeoutExceededException' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/TimeoutExceededException.php',
         'Illuminate\\Queue\\Worker' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Worker.php',
         'Illuminate\\Queue\\WorkerOptions' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/WorkerOptions.php',
         'Illuminate\\Redis\\Connections\\Connection' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Redis/Connections/Connection.php',
@@ -2667,6 +2668,7 @@ class ComposerStaticInit8a591507754f0b39ac364b210a07e455
         'Illuminate\\Support\\ProcessUtils' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/ProcessUtils.php',
         'Illuminate\\Support\\Reflector' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Reflector.php',
         'Illuminate\\Support\\ServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/ServiceProvider.php',
+        'Illuminate\\Support\\Sleep' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Sleep.php',
         'Illuminate\\Support\\Str' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Str.php',
         'Illuminate\\Support\\Stringable' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Stringable.php',
         'Illuminate\\Support\\Testing\\Fakes\\BatchFake' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/Testing/Fakes/BatchFake.php',
@@ -6397,10 +6399,10 @@ class ComposerStaticInit8a591507754f0b39ac364b210a07e455
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit8a591507754f0b39ac364b210a07e455::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit8a591507754f0b39ac364b210a07e455::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit8a591507754f0b39ac364b210a07e455::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit8a591507754f0b39ac364b210a07e455::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitd4b34ef4f7c6348b1b01bb29d0a2905e::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitd4b34ef4f7c6348b1b01bb29d0a2905e::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitd4b34ef4f7c6348b1b01bb29d0a2905e::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitd4b34ef4f7c6348b1b01bb29d0a2905e::$classMap;
 
         }, null, ClassLoader::class);
     }
