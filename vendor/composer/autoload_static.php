@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd4b34ef4f7c6348b1b01bb29d0a2905e
+class ComposerStaticInit547eff49004e50e302e6044c5bc069f4
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -344,8 +344,8 @@ class ComposerStaticInitd4b34ef4f7c6348b1b01bb29d0a2905e
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -2473,6 +2473,7 @@ class ComposerStaticInitd4b34ef4f7c6348b1b01bb29d0a2905e
         'Illuminate\\Queue\\Failed\\DatabaseUuidFailedJobProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Failed/DatabaseUuidFailedJobProvider.php',
         'Illuminate\\Queue\\Failed\\DynamoDbFailedJobProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Failed/DynamoDbFailedJobProvider.php',
         'Illuminate\\Queue\\Failed\\FailedJobProviderInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Failed/FailedJobProviderInterface.php',
+        'Illuminate\\Queue\\Failed\\FileFailedJobProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Failed/FileFailedJobProvider.php',
         'Illuminate\\Queue\\Failed\\NullFailedJobProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Failed/NullFailedJobProvider.php',
         'Illuminate\\Queue\\Failed\\PrunableFailedJobProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Failed/PrunableFailedJobProvider.php',
         'Illuminate\\Queue\\InteractsWithQueue' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/InteractsWithQueue.php',
@@ -6399,10 +6400,10 @@ class ComposerStaticInitd4b34ef4f7c6348b1b01bb29d0a2905e
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd4b34ef4f7c6348b1b01bb29d0a2905e::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd4b34ef4f7c6348b1b01bb29d0a2905e::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitd4b34ef4f7c6348b1b01bb29d0a2905e::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitd4b34ef4f7c6348b1b01bb29d0a2905e::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit547eff49004e50e302e6044c5bc069f4::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit547eff49004e50e302e6044c5bc069f4::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit547eff49004e50e302e6044c5bc069f4::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit547eff49004e50e302e6044c5bc069f4::$classMap;
 
         }, null, ClassLoader::class);
     }
