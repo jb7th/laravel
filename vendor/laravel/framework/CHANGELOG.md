@@ -1,7 +1,76 @@
 # Release Notes for 10.x
 
-## [Unreleased](https://github.com/laravel/framework/compare/v10.12.0...10.x)
+## [Unreleased](https://github.com/laravel/framework/compare/v10.13.5...10.x)
 
+## [v10.13.5](https://github.com/laravel/framework/compare/v10.13.3...v10.13.5) - 2023-06-08
+
+- Revert "[10.x] Update Kernel::load() to use same `classFromFile` logic as events" by @taylorotwell in https://github.com/laravel/framework/pull/47382
+
+## [v10.13.3](https://github.com/laravel/framework/compare/v10.13.2...v10.13.3) - 2023-06-08
+
+### What's Changed
+- Narrow down array type for `$attributes` in `CastsAttributes` by @devfrey in https://github.com/laravel/framework/pull/47365
+- Add test for `assertViewHasAll` method by @milwad-dev in https://github.com/laravel/framework/pull/47366
+- Fix `schedule:list` to display named Jobs by @liamkeily in https://github.com/laravel/framework/pull/47367
+- Support `ConditionalRules` within `NestedRules` by @cosmastech in https://github.com/laravel/framework/pull/47344
+- Small test fixes by @stevebauman in https://github.com/laravel/framework/pull/47369
+- Pluralisation typo in queue:clear command output by @sebsobseb in https://github.com/laravel/framework/pull/47376
+- Add getForeignKeyFrom method by @iamgergo in https://github.com/laravel/framework/pull/47378
+- Add shouldHashKeys to ThrottleRequests middleware by @fosron in https://github.com/laravel/framework/pull/47368
+
+## [v10.13.2 (2023-06-05)](https://github.com/laravel/framework/compare/v10.13.1...v10.13.2)
+
+### Added
+- Added `Illuminate/Http/Client/PendingRequest::replaceHeaders()` ([#47335](https://github.com/laravel/framework/pull/47335))
+- Added `Illuminate/Notifications/Messages/MailMessage::attachMany()` ([#47345](https://github.com/laravel/framework/pull/47345))
+
+### Reverted
+- Revert "[10.x] Remove session on authenticatable deletion v2" ([#47354](https://github.com/laravel/framework/pull/47354))
+
+### Fixed
+- Fixes usage of Redis::many() with empty array ([#47307](https://github.com/laravel/framework/pull/47307))
+- Fix mapped renderable exception handling ([#47347](https://github.com/laravel/framework/pull/47347))
+- Avoid duplicates in fillable/guarded on merge in Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php ([#47351](https://github.com/laravel/framework/pull/47351))
+
+### Changed
+- Update Kernel::load() to use same classFromFile logic as events ([#47327](https://github.com/laravel/framework/pull/47327))
+- Remove redundant 'setAccessible' methods ([#47348](https://github.com/laravel/framework/pull/47348))
+
+## [v10.13.1 (2023-06-02)](https://github.com/laravel/framework/compare/v10.13.0...v10.13.1)
+
+### Added
+- Added `Illuminate\Contracts\Database\Query\ConditionExpression` interface and functional for this ([#47210](https://github.com/laravel/framework/pull/47210))
+- Added return type for `Illuminate/Notifications/Channels/MailChannel::send()` ([#47310](https://github.com/laravel/framework/pull/47310))
+
+### Reverted
+- Revert "[10.x] Fix inconsistentcy between report and render methods" ([#47326](https://github.com/laravel/framework/pull/47326))
+
+### Changed
+- Display queue runtime in human readable format ([#47227](https://github.com/laravel/framework/pull/47227))
+
+## [v10.13.0 (2023-05-30)](https://github.com/laravel/framework/compare/v10.12.0...v10.13.0)
+
+### Added
+- Added `Illuminate/Hashing/HashManager::isHashed()` ([#47197](https://github.com/laravel/framework/pull/47197))
+- Escaping functionality within the Grammar ([#46558](https://github.com/laravel/framework/pull/46558))
+- Provide testing hooks in `Illuminate/Support/Sleep.php` ([#47228](https://github.com/laravel/framework/pull/47228))
+- Added missing methods to AssertsStatusCodes ([#47277](https://github.com/laravel/framework/pull/47277))
+- Wrap response preparation in events ([#47229](https://github.com/laravel/framework/pull/47229))
+
+### Fixed
+- Fixed bug when function wrapped around definition of related factory ([#47168](https://github.com/laravel/framework/pull/47168))
+- Fixed inconsistentcy between report and render methods ([#47201](https://github.com/laravel/framework/pull/47201))
+- Fixes Model::isDirty() when AsCollection or AsEncryptedCollection have arguments ([#47235](https://github.com/laravel/framework/pull/47235))
+- Fixed escaped String for JSON_CONTAINS ([#47244](https://github.com/laravel/framework/pull/47244))
+- Fixes missing output on ProcessFailedException exception ([#47285](https://github.com/laravel/framework/pull/47285))
+
+### Changed
+- Remove useless else statements ([#47186](https://github.com/laravel/framework/pull/47186))
+- RedisStore improvement - don't open transaction unless all values are serialaizable ([#47193](https://github.com/laravel/framework/pull/47193))
+- Use carbon::now() to get current timestamp in takeUntilTimeout lazycollection-method ([#47200](https://github.com/laravel/framework/pull/47200))
+- Avoid duplicates in visible/hidden on merge ([#47264](https://github.com/laravel/framework/pull/47264))
+- Add a missing semicolon to CompilesClasses ([#47280](https://github.com/laravel/framework/pull/47280))
+- Send along value to InvalidPayloadException ([#47223](https://github.com/laravel/framework/pull/47223))
 
 ## [v10.12.0 (2023-05-23)](https://github.com/laravel/framework/compare/v10.11.0...v10.12.0)
 
@@ -24,7 +93,6 @@
 ### Refactoring
 - Remove useless else statements ([#47161](https://github.com/laravel/framework/pull/47161))
 
-
 ## [v10.11.0 (2023-05-16)](https://github.com/laravel/framework/compare/v10.10.1...v10.11.0)
 
 ### Added
@@ -44,7 +112,6 @@
 - Clears resolved instance of Vite when using withoutVite ([#47091](https://github.com/laravel/framework/pull/47091))
 - Remove workarounds for old Guzzle versions ([#47084](https://github.com/laravel/framework/pull/47084))
 
-
 ## [v10.10.1 (2023-05-11)](https://github.com/laravel/framework/compare/v10.10.0...v10.10.1)
 
 ### Added
@@ -61,7 +128,6 @@
 - Used `Carbon::now()` instead of `now()` ([#47017](https://github.com/laravel/framework/pull/47017))
 - Use file locks when writing failed jobs to disk ([b822d28](https://github.com/laravel/framework/commit/b822d2810d29ab1aedf667abc76ed969d28bbaf5))
 - Raise visibility of Mailable prepareMailableForDelivery() ([#47031](https://github.com/laravel/framework/pull/47031))
-
 
 ## [v10.10.0 (2023-05-09)](https://github.com/laravel/framework/compare/v10.9.0...v10.10.0)
 
@@ -85,7 +151,6 @@
 - Do reconnect when redis throws connection lost error ([#46989](https://github.com/laravel/framework/pull/46989))
 - Throw timeoutException instead of maxAttemptsExceededException when a job times out ([#46968](https://github.com/laravel/framework/pull/46968))
 
-
 ## [v10.9.0 (2023-04-25)](https://github.com/laravel/framework/compare/v10.8.0...v10.9.0)
 
 ### Added
@@ -106,7 +171,6 @@
 - Improve job release method to accept date instance ([#46854](https://github.com/laravel/framework/pull/46854))
 - Use foreignUlid if model uses HasUlids trait when call foreignIdFor ([#46876](https://github.com/laravel/framework/pull/46876))
 
-
 ## [v10.8.0 (2023-04-18)](https://github.com/laravel/framework/compare/v10.7.1...v10.8.0)
 
 ### Added
@@ -125,7 +189,6 @@
 - Add headers to exception in `Illuminate/Foundation/Application::abourd()` ([#46780](https://github.com/laravel/framework/pull/46780))
 - Minor skeleton slimming (framework edition) ([#46786](https://github.com/laravel/framework/pull/46786))
 - Release lock for job implementing ShouldBeUnique that is dispatched afterResponse() ([#46806](https://github.com/laravel/framework/pull/46806))
-
 
 ## [v10.7.1 (2023-04-11)](https://github.com/laravel/framework/compare/v10.7.0...v10.7.1)
 

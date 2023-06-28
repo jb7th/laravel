@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitea327cec8972af2d4d335519259f463a
+class ComposerStaticInit30a1db65029e65c473d615eae985a680
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -32,6 +32,8 @@ class ComposerStaticInitea327cec8972af2d4d335519259f463a
         'c7a3c339e7e14b60e06a2d7fcce9476b' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        'c72349b1fe8d0deeedd3a52e8aa814d8' => __DIR__ . '/..' . '/mockery/mockery/library/helpers.php',
+        'ce9671a430e4846b44e1c68c7611f9f5' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'a1cfe24d14977df6878b9bf804af2d1c' => __DIR__ . '/..' . '/nunomaduro/collision/src/Adapters/Phpunit/Autoload.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         '320163ac6b93aebe3dc25b60a0533d56' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/helpers.php',
@@ -112,6 +114,7 @@ class ComposerStaticInitea327cec8972af2d4d335519259f463a
         'M' => 
         array (
             'Monolog\\' => 8,
+            'Mockery\\' => 8,
         ),
         'L' => 
         array (
@@ -380,6 +383,10 @@ class ComposerStaticInitea327cec8972af2d4d335519259f463a
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
+        'Mockery\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mockery/mockery/library/Mockery',
+        ),
         'League\\MimeTypeDetection\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/mime-type-detection/src',
@@ -512,16 +519,6 @@ class ComposerStaticInitea327cec8972af2d4d335519259f463a
         array (
             0 => __DIR__ . '/../..' . '/app',
             1 => __DIR__ . '/..' . '/laravel/pint/app',
-        ),
-    );
-
-    public static $prefixesPsr0 = array (
-        'M' => 
-        array (
-            'Mockery' => 
-            array (
-                0 => __DIR__ . '/..' . '/mockery/mockery/library',
-            ),
         ),
     );
 
@@ -1347,6 +1344,7 @@ class ComposerStaticInitea327cec8972af2d4d335519259f463a
         'Faker\\Provider\\nl_NL\\PhoneNumber' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/PhoneNumber.php',
         'Faker\\Provider\\nl_NL\\Text' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/Text.php',
         'Faker\\Provider\\pl_PL\\Address' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/pl_PL/Address.php',
+        'Faker\\Provider\\pl_PL\\Color' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/pl_PL/Color.php',
         'Faker\\Provider\\pl_PL\\Company' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/pl_PL/Company.php',
         'Faker\\Provider\\pl_PL\\Internet' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/pl_PL/Internet.php',
         'Faker\\Provider\\pl_PL\\LicensePlate' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/pl_PL/LicensePlate.php',
@@ -1858,6 +1856,7 @@ class ComposerStaticInitea327cec8972af2d4d335519259f463a
         'Illuminate\\Contracts\\Database\\Events\\MigrationEvent' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Database/Events/MigrationEvent.php',
         'Illuminate\\Contracts\\Database\\ModelIdentifier' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Database/ModelIdentifier.php',
         'Illuminate\\Contracts\\Database\\Query\\Builder' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Database/Query/Builder.php',
+        'Illuminate\\Contracts\\Database\\Query\\ConditionExpression' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Database/Query/ConditionExpression.php',
         'Illuminate\\Contracts\\Database\\Query\\Expression' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Database/Query/Expression.php',
         'Illuminate\\Contracts\\Debug\\ExceptionHandler' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Debug/ExceptionHandler.php',
         'Illuminate\\Contracts\\Encryption\\DecryptException' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Encryption/DecryptException.php',
@@ -2730,6 +2729,7 @@ class ComposerStaticInitea327cec8972af2d4d335519259f463a
         'Illuminate\\Testing\\TestResponse' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Testing/TestResponse.php',
         'Illuminate\\Testing\\TestView' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Testing/TestView.php',
         'Illuminate\\Translation\\ArrayLoader' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Translation/ArrayLoader.php',
+        'Illuminate\\Translation\\CreatesPotentiallyTranslatedStrings' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Translation/CreatesPotentiallyTranslatedStrings.php',
         'Illuminate\\Translation\\FileLoader' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Translation/FileLoader.php',
         'Illuminate\\Translation\\MessageSelector' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Translation/MessageSelector.php',
         'Illuminate\\Translation\\PotentiallyTranslatedString' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Translation/PotentiallyTranslatedString.php',
@@ -2749,6 +2749,7 @@ class ComposerStaticInitea327cec8972af2d4d335519259f463a
         'Illuminate\\Validation\\NotPwnedVerifier' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/NotPwnedVerifier.php',
         'Illuminate\\Validation\\PresenceVerifierInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/PresenceVerifierInterface.php',
         'Illuminate\\Validation\\Rule' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/Rule.php',
+        'Illuminate\\Validation\\Rules\\Can' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/Rules/Can.php',
         'Illuminate\\Validation\\Rules\\DatabaseRule' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/Rules/DatabaseRule.php',
         'Illuminate\\Validation\\Rules\\Dimensions' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/Rules/Dimensions.php',
         'Illuminate\\Validation\\Rules\\Enum' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/Rules/Enum.php',
@@ -3225,7 +3226,6 @@ class ComposerStaticInitea327cec8972af2d4d335519259f463a
         'League\\MimeTypeDetection\\GeneratedExtensionToMimeTypeMap' => __DIR__ . '/..' . '/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php',
         'League\\MimeTypeDetection\\MimeTypeDetector' => __DIR__ . '/..' . '/league/mime-type-detection/src/MimeTypeDetector.php',
         'League\\MimeTypeDetection\\OverridingExtensionToMimeTypeMap' => __DIR__ . '/..' . '/league/mime-type-detection/src/OverridingExtensionToMimeTypeMap.php',
-        'Mockery' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegration' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegrationAssertPostConditions' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegrationAssertPostConditions.php',
         'Mockery\\Adapter\\Phpunit\\MockeryTestCase' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php',
@@ -3246,6 +3246,7 @@ class ComposerStaticInitea327cec8972af2d4d335519259f463a
         'Mockery\\Exception\\InvalidArgumentException' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Exception/InvalidArgumentException.php',
         'Mockery\\Exception\\InvalidCountException' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Exception/InvalidCountException.php',
         'Mockery\\Exception\\InvalidOrderException' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Exception/InvalidOrderException.php',
+        'Mockery\\Exception\\MockeryExceptionInterface' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Exception/MockeryExceptionInterface.php',
         'Mockery\\Exception\\NoMatchingExpectationException' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Exception/NoMatchingExpectationException.php',
         'Mockery\\Exception\\RuntimeException' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Exception/RuntimeException.php',
         'Mockery\\Expectation' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Expectation.php',
@@ -3264,6 +3265,7 @@ class ComposerStaticInitea327cec8972af2d4d335519259f463a
         'Mockery\\Generator\\StringManipulationGenerator' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Generator/StringManipulationGenerator.php',
         'Mockery\\Generator\\StringManipulation\\Pass\\AvoidMethodClashPass' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/AvoidMethodClashPass.php',
         'Mockery\\Generator\\StringManipulation\\Pass\\CallTypeHintPass' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/CallTypeHintPass.php',
+        'Mockery\\Generator\\StringManipulation\\Pass\\ClassAttributesPass' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/ClassAttributesPass.php',
         'Mockery\\Generator\\StringManipulation\\Pass\\ClassNamePass' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/ClassNamePass.php',
         'Mockery\\Generator\\StringManipulation\\Pass\\ClassPass' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/ClassPass.php',
         'Mockery\\Generator\\StringManipulation\\Pass\\ConstantsPass' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Generator/StringManipulation/Pass/ConstantsPass.php',
@@ -3294,6 +3296,8 @@ class ComposerStaticInitea327cec8972af2d4d335519259f463a
         'Mockery\\Matcher\\Ducktype' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/Ducktype.php',
         'Mockery\\Matcher\\HasKey' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/HasKey.php',
         'Mockery\\Matcher\\HasValue' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/HasValue.php',
+        'Mockery\\Matcher\\IsEqual' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/IsEqual.php',
+        'Mockery\\Matcher\\IsSame' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/IsSame.php',
         'Mockery\\Matcher\\MatcherAbstract' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/MatcherAbstract.php',
         'Mockery\\Matcher\\MultiArgumentClosure' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/MultiArgumentClosure.php',
         'Mockery\\Matcher\\MustBe' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/MustBe.php',
@@ -3414,6 +3418,7 @@ class ComposerStaticInitea327cec8972af2d4d335519259f463a
         'Monolog\\Processor\\GitProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/GitProcessor.php',
         'Monolog\\Processor\\HostnameProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/HostnameProcessor.php',
         'Monolog\\Processor\\IntrospectionProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/IntrospectionProcessor.php',
+        'Monolog\\Processor\\LoadAverageProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/LoadAverageProcessor.php',
         'Monolog\\Processor\\MemoryPeakUsageProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/MemoryPeakUsageProcessor.php',
         'Monolog\\Processor\\MemoryProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/MemoryProcessor.php',
         'Monolog\\Processor\\MemoryUsageProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/MemoryUsageProcessor.php',
@@ -3526,6 +3531,7 @@ class ComposerStaticInitea327cec8972af2d4d335519259f463a
         'PHPUnit\\Event\\Code\\ClassMethod' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Value/ClassMethod.php',
         'PHPUnit\\Event\\Code\\ComparisonFailure' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Value/ComparisonFailure.php',
         'PHPUnit\\Event\\Code\\ComparisonFailureBuilder' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Value/ComparisonFailureBuilder.php',
+        'PHPUnit\\Event\\Code\\NoTestCaseObjectOnCallStackException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Exception/NoTestCaseObjectOnCallStackException.php',
         'PHPUnit\\Event\\Code\\Phpt' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Value/Test/Phpt.php',
         'PHPUnit\\Event\\Code\\Test' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Value/Test/Test.php',
         'PHPUnit\\Event\\Code\\TestCollection' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Value/Test/TestCollection.php',
@@ -3651,6 +3657,10 @@ class ComposerStaticInitea327cec8972af2d4d335519259f463a
         'PHPUnit\\Event\\Test\\ComparatorRegisteredSubscriber' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/Test/ComparatorRegisteredSubscriber.php',
         'PHPUnit\\Event\\Test\\ConsideredRisky' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/Test/Issue/ConsideredRisky.php',
         'PHPUnit\\Event\\Test\\ConsideredRiskySubscriber' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/Test/Issue/ConsideredRiskySubscriber.php',
+        'PHPUnit\\Event\\Test\\DataProviderMethodCalled' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/Test/Lifecycle/DataProviderMethodCalled.php',
+        'PHPUnit\\Event\\Test\\DataProviderMethodCalledSubscriber' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/Test/Lifecycle/DataProviderMethodCalledSubscriber.php',
+        'PHPUnit\\Event\\Test\\DataProviderMethodFinished' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/Test/Lifecycle/DataProviderMethodFinished.php',
+        'PHPUnit\\Event\\Test\\DataProviderMethodFinishedSubscriber' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/Test/Lifecycle/DataProviderMethodFinishedSubscriber.php',
         'PHPUnit\\Event\\Test\\DeprecationTriggered' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/Test/Issue/DeprecationTriggered.php',
         'PHPUnit\\Event\\Test\\DeprecationTriggeredSubscriber' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/Test/Issue/DeprecationTriggeredSubscriber.php',
         'PHPUnit\\Event\\Test\\ErrorTriggered' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/Test/Issue/ErrorTriggered.php',
@@ -4071,9 +4081,7 @@ class ComposerStaticInitea327cec8972af2d4d335519259f463a
         'PHPUnit\\Metadata\\Version\\ConstraintRequirement' => __DIR__ . '/..' . '/phpunit/phpunit/src/Metadata/Version/ConstraintRequirement.php',
         'PHPUnit\\Metadata\\Version\\Requirement' => __DIR__ . '/..' . '/phpunit/phpunit/src/Metadata/Version/Requirement.php',
         'PHPUnit\\Runner\\ClassCannotBeFoundException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Runner/Exception/ClassCannotBeFoundException.php',
-        'PHPUnit\\Runner\\ClassCannotBeInstantiatedException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Runner/Exception/ClassCannotBeInstantiatedException.php',
-        'PHPUnit\\Runner\\ClassDoesNotExistException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Runner/Exception/ClassDoesNotExistException.php',
-        'PHPUnit\\Runner\\ClassDoesNotImplementExtensionInterfaceException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Runner/Exception/ClassDoesNotImplementExtensionInterfaceException.php',
+        'PHPUnit\\Runner\\ClassDoesNotExtendTestCaseException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Runner/Exception/ClassDoesNotExtendTestCaseException.php',
         'PHPUnit\\Runner\\ClassIsAbstractException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Runner/Exception/ClassIsAbstractException.php',
         'PHPUnit\\Runner\\CodeCoverage' => __DIR__ . '/..' . '/phpunit/phpunit/src/Runner/CodeCoverage.php',
         'PHPUnit\\Runner\\DirectoryCannotBeCreatedException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Runner/Exception/DirectoryCannotBeCreatedException.php',
@@ -4093,7 +4101,6 @@ class ComposerStaticInitea327cec8972af2d4d335519259f463a
         'PHPUnit\\Runner\\InvalidOrderException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Runner/Exception/InvalidOrderException.php',
         'PHPUnit\\Runner\\InvalidPhptFileException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Runner/Exception/InvalidPhptFileException.php',
         'PHPUnit\\Runner\\NoIgnoredEventException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Runner/Exception/NoIgnoredEventException.php',
-        'PHPUnit\\Runner\\NoTestCaseObjectOnCallStackException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Runner/Exception/NoTestCaseObjectOnCallStackException.php',
         'PHPUnit\\Runner\\ParameterDoesNotExistException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Runner/Exception/ParameterDoesNotExistException.php',
         'PHPUnit\\Runner\\PhptExternalFileCannotBeLoadedException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Runner/Exception/PhptExternalFileCannotBeLoadedException.php',
         'PHPUnit\\Runner\\PhptTestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/Runner/PhptTestCase.php',
@@ -4240,6 +4247,7 @@ class ComposerStaticInitea327cec8972af2d4d335519259f463a
         'PHPUnit\\TextUI\\Output\\Default\\ProgressPrinter\\TestRunnerExecutionStartedSubscriber' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestRunnerExecutionStartedSubscriber.php',
         'PHPUnit\\TextUI\\Output\\Default\\ProgressPrinter\\TestSkippedSubscriber' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestSkippedSubscriber.php',
         'PHPUnit\\TextUI\\Output\\Default\\ProgressPrinter\\TestTriggeredDeprecationSubscriber' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredDeprecationSubscriber.php',
+        'PHPUnit\\TextUI\\Output\\Default\\ProgressPrinter\\TestTriggeredErrorSubscriber' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredErrorSubscriber.php',
         'PHPUnit\\TextUI\\Output\\Default\\ProgressPrinter\\TestTriggeredNoticeSubscriber' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredNoticeSubscriber.php',
         'PHPUnit\\TextUI\\Output\\Default\\ProgressPrinter\\TestTriggeredPhpDeprecationSubscriber' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpDeprecationSubscriber.php',
         'PHPUnit\\TextUI\\Output\\Default\\ProgressPrinter\\TestTriggeredPhpNoticeSubscriber' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Output/Default/ProgressPrinter/Subscriber/TestTriggeredPhpNoticeSubscriber.php',
@@ -4300,8 +4308,8 @@ class ComposerStaticInitea327cec8972af2d4d335519259f463a
         'PHPUnit\\TextUI\\XmlConfiguration\\MoveAttributesFromFilterWhitelistToCoverage' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/MoveAttributesFromFilterWhitelistToCoverage.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\MoveAttributesFromRootToCoverage' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/MoveAttributesFromRootToCoverage.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\MoveCoverageDirectoriesToSource' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/MoveCoverageDirectoriesToSource.php',
-        'PHPUnit\\TextUI\\XmlConfiguration\\MoveWhitelistDirectoriesToCoverage' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/MoveWhitelistDirectoriesToCoverage.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\MoveWhitelistExcludesToCoverage' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/MoveWhitelistExcludesToCoverage.php',
+        'PHPUnit\\TextUI\\XmlConfiguration\\MoveWhitelistIncludesToCoverage' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/MoveWhitelistIncludesToCoverage.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\PHPUnit' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/PHPUnit.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\RemoveBeStrictAboutResourceUsageDuringSmallTestsAttribute' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RemoveBeStrictAboutResourceUsageDuringSmallTestsAttribute.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\RemoveBeStrictAboutTodoAnnotatedTestsAttribute' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/RemoveBeStrictAboutTodoAnnotatedTestsAttribute.php',
@@ -4326,7 +4334,6 @@ class ComposerStaticInitea327cec8972af2d4d335519259f463a
         'PHPUnit\\TextUI\\XmlConfiguration\\SchemaDetector' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/SchemaDetector/SchemaDetector.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\SchemaFinder' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/SchemaFinder.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\SnapshotNodeList' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/SnapshotNodeList.php',
-        'PHPUnit\\TextUI\\XmlConfiguration\\Source' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/Source.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\SuccessfulSchemaDetectionResult' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/SchemaDetector/SuccessfulSchemaDetectionResult.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\TestSuiteMapper' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/TestSuiteMapper.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\UpdateSchemaLocation' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/Configuration/Xml/Migration/Migrations/UpdateSchemaLocation.php',
@@ -6425,10 +6432,9 @@ class ComposerStaticInitea327cec8972af2d4d335519259f463a
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitea327cec8972af2d4d335519259f463a::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitea327cec8972af2d4d335519259f463a::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitea327cec8972af2d4d335519259f463a::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitea327cec8972af2d4d335519259f463a::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit30a1db65029e65c473d615eae985a680::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit30a1db65029e65c473d615eae985a680::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit30a1db65029e65c473d615eae985a680::$classMap;
 
         }, null, ClassLoader::class);
     }
