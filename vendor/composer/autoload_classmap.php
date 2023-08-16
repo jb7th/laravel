@@ -1925,6 +1925,7 @@ return array(
     'Illuminate\\Process\\Pool' => $vendorDir . '/laravel/framework/src/Illuminate/Process/Pool.php',
     'Illuminate\\Process\\ProcessPoolResults' => $vendorDir . '/laravel/framework/src/Illuminate/Process/ProcessPoolResults.php',
     'Illuminate\\Process\\ProcessResult' => $vendorDir . '/laravel/framework/src/Illuminate/Process/ProcessResult.php',
+    'Illuminate\\Queue\\Attributes\\WithoutRelations' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/Attributes/WithoutRelations.php',
     'Illuminate\\Queue\\BeanstalkdQueue' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/BeanstalkdQueue.php',
     'Illuminate\\Queue\\CallQueuedClosure' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/CallQueuedClosure.php',
     'Illuminate\\Queue\\CallQueuedHandler' => $vendorDir . '/laravel/framework/src/Illuminate/Queue/CallQueuedHandler.php',
