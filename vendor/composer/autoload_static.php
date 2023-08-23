@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit6975939dff30dd085e9e4f550eb62ed0
+class ComposerStaticInit097ce7d96df47ee5abcd213cb341db07
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -105,6 +105,7 @@ class ComposerStaticInit6975939dff30dd085e9e4f550eb62ed0
             'Psr\\Http\\Client\\' => 16,
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
+            'Psr\\Clock\\' => 10,
             'PhpParser\\' => 10,
             'PhpOption\\' => 10,
         ),
@@ -368,6 +369,10 @@ class ComposerStaticInit6975939dff30dd085e9e4f550eb62ed0
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'Psr\\Clock\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/clock/src',
         ),
         'PhpParser\\' => 
         array (
@@ -2157,6 +2162,7 @@ class ComposerStaticInit6975939dff30dd085e9e4f550eb62ed0
         'Illuminate\\Database\\Schema\\SqliteSchemaState' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Schema/SqliteSchemaState.php',
         'Illuminate\\Database\\Seeder' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Seeder.php',
         'Illuminate\\Database\\SqlServerConnection' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/SqlServerConnection.php',
+        'Illuminate\\Database\\UniqueConstraintViolationException' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/UniqueConstraintViolationException.php',
         'Illuminate\\Encryption\\Encrypter' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Encryption/Encrypter.php',
         'Illuminate\\Encryption\\EncryptionServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Encryption/EncryptionServiceProvider.php',
         'Illuminate\\Encryption\\MissingAppKeyException' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Encryption/MissingAppKeyException.php',
@@ -4757,6 +4763,7 @@ class ComposerStaticInit6975939dff30dd085e9e4f550eb62ed0
         'PhpParser\\PrettyPrinterAbstract' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/PrettyPrinterAbstract.php',
         'PhpParser\\PrettyPrinter\\Standard' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/PrettyPrinter/Standard.php',
         'PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
+        'Psr\\Clock\\ClockInterface' => __DIR__ . '/..' . '/psr/clock/src/ClockInterface.php',
         'Psr\\Container\\ContainerExceptionInterface' => __DIR__ . '/..' . '/psr/container/src/ContainerExceptionInterface.php',
         'Psr\\Container\\ContainerInterface' => __DIR__ . '/..' . '/psr/container/src/ContainerInterface.php',
         'Psr\\Container\\NotFoundExceptionInterface' => __DIR__ . '/..' . '/psr/container/src/NotFoundExceptionInterface.php',
@@ -6526,9 +6533,9 @@ class ComposerStaticInit6975939dff30dd085e9e4f550eb62ed0
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit6975939dff30dd085e9e4f550eb62ed0::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit6975939dff30dd085e9e4f550eb62ed0::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit6975939dff30dd085e9e4f550eb62ed0::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit097ce7d96df47ee5abcd213cb341db07::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit097ce7d96df47ee5abcd213cb341db07::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit097ce7d96df47ee5abcd213cb341db07::$classMap;
 
         }, null, ClassLoader::class);
     }
