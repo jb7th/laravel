@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit097ce7d96df47ee5abcd213cb341db07
+class ComposerStaticInit42f3077b64ca0b0e6901789dd20d7dc7
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -710,6 +710,15 @@ class ComposerStaticInit097ce7d96df47ee5abcd213cb341db07
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
+        'DateError' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateError.php',
+        'DateException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateException.php',
+        'DateInvalidOperationException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateInvalidOperationException.php',
+        'DateInvalidTimeZoneException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateInvalidTimeZoneException.php',
+        'DateMalformedIntervalStringException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateMalformedIntervalStringException.php',
+        'DateMalformedPeriodStringException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateMalformedPeriodStringException.php',
+        'DateMalformedStringException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateMalformedStringException.php',
+        'DateObjectError' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateObjectError.php',
+        'DateRangeError' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateRangeError.php',
         'DebugBar\\Bridge\\CacheCacheCollector' => __DIR__ . '/..' . '/maximebf/debugbar/src/DebugBar/Bridge/CacheCacheCollector.php',
         'DebugBar\\Bridge\\DoctrineCollector' => __DIR__ . '/..' . '/maximebf/debugbar/src/DebugBar/Bridge/DoctrineCollector.php',
         'DebugBar\\Bridge\\MonologCollector' => __DIR__ . '/..' . '/maximebf/debugbar/src/DebugBar/Bridge/MonologCollector.php',
@@ -2495,6 +2504,7 @@ class ComposerStaticInit097ce7d96df47ee5abcd213cb341db07
         'Illuminate\\Queue\\Events\\Looping' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/Looping.php',
         'Illuminate\\Queue\\Events\\QueueBusy' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/QueueBusy.php',
         'Illuminate\\Queue\\Events\\WorkerStopping' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Events/WorkerStopping.php',
+        'Illuminate\\Queue\\Failed\\CountableFailedJobProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Failed/CountableFailedJobProvider.php',
         'Illuminate\\Queue\\Failed\\DatabaseFailedJobProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Failed/DatabaseFailedJobProvider.php',
         'Illuminate\\Queue\\Failed\\DatabaseUuidFailedJobProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Failed/DatabaseUuidFailedJobProvider.php',
         'Illuminate\\Queue\\Failed\\DynamoDbFailedJobProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/Failed/DynamoDbFailedJobProvider.php',
@@ -3583,6 +3593,7 @@ class ComposerStaticInit097ce7d96df47ee5abcd213cb341db07
         'NunoMaduro\\Collision\\Provider' => __DIR__ . '/..' . '/nunomaduro/collision/src/Provider.php',
         'NunoMaduro\\Collision\\SolutionsRepositories\\NullSolutionsRepository' => __DIR__ . '/..' . '/nunomaduro/collision/src/SolutionsRepositories/NullSolutionsRepository.php',
         'NunoMaduro\\Collision\\Writer' => __DIR__ . '/..' . '/nunomaduro/collision/src/Writer.php',
+        'Override' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/Override.php',
         'PHPUnit\\Event\\Application\\Finished' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/Application/Finished.php',
         'PHPUnit\\Event\\Application\\FinishedSubscriber' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/Application/FinishedSubscriber.php',
         'PHPUnit\\Event\\Application\\Started' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/Application/Started.php',
@@ -5497,6 +5508,7 @@ class ComposerStaticInit097ce7d96df47ee5abcd213cb341db07
         'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\OpenAiSolutionProvider' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Solutions/SolutionProviders/OpenAiSolutionProvider.php',
         'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\RouteNotDefinedSolutionProvider' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Solutions/SolutionProviders/RouteNotDefinedSolutionProvider.php',
         'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\RunningLaravelDuskInProductionProvider' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Solutions/SolutionProviders/RunningLaravelDuskInProductionProvider.php',
+        'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\SailNetworkSolutionProvider' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Solutions/SolutionProviders/SailNetworkSolutionProvider.php',
         'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\SolutionProviderRepository' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Solutions/SolutionProviders/SolutionProviderRepository.php',
         'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\TableNotFoundSolutionProvider' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Solutions/SolutionProviders/TableNotFoundSolutionProvider.php',
         'Spatie\\LaravelIgnition\\Solutions\\SolutionProviders\\UndefinedLivewireMethodSolutionProvider' => __DIR__ . '/..' . '/spatie/laravel-ignition/src/Solutions/SolutionProviders/UndefinedLivewireMethodSolutionProvider.php',
@@ -6533,9 +6545,9 @@ class ComposerStaticInit097ce7d96df47ee5abcd213cb341db07
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit097ce7d96df47ee5abcd213cb341db07::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit097ce7d96df47ee5abcd213cb341db07::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit097ce7d96df47ee5abcd213cb341db07::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit42f3077b64ca0b0e6901789dd20d7dc7::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit42f3077b64ca0b0e6901789dd20d7dc7::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit42f3077b64ca0b0e6901789dd20d7dc7::$classMap;
 
         }, null, ClassLoader::class);
     }
