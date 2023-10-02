@@ -452,6 +452,10 @@ class Str
             return false;
         }
 
+        if (function_exists('json_validate')) {
+            return json_validate($value, 512);
+        }
+
         try {
             json_decode($value, true, 512, JSON_THROW_ON_ERROR);
         } catch (JsonException) {
@@ -516,11 +520,7 @@ class Str
             return false;
         }
 
-        if ($value === '00000000-0000-0000-0000-000000000000') {
-            return true;
-        }
-
-        return preg_match('/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/iD', $value) > 0;
+        return preg_match('/^[\da-f]{8}-[\da-f]{4}-[\da-f]{4}-[\da-f]{4}-[\da-f]{12}$/iD', $value) > 0;
     }
 
     /**
@@ -859,6 +859,20 @@ class Str
                 ->when($spaces, fn ($c) => $c->merge([' ']))
                 ->pipe(fn ($c) => Collection::times($length, fn () => $c[random_int(0, $c->count() - 1)]))
                 ->implode('');
+    }
+
+    /**
+     * Find the multi-byte safe position of the first occurrence of a given substring in a string.
+     *
+     * @param  string  $haystack
+     * @param  string  $needle
+     * @param  int  $offset
+     * @param  string|null  $encoding
+     * @return int|false
+     */
+    public static function position($haystack, $needle, $offset = 0, $encoding = null)
+    {
+        return mb_strpos($haystack, (string) $needle, $offset, $encoding);
     }
 
     /**
@@ -1370,6 +1384,22 @@ class Str
     public static function swap(array $map, $subject)
     {
         return strtr($subject, $map);
+    }
+
+    /**
+     * Take the first or last {$limit} characters of a string.
+     *
+     * @param  string  $string
+     * @param  int  $limit
+     * @return string
+     */
+    public static function take($string, int $limit): string
+    {
+        if ($limit < 0) {
+            return static::substr($string, $limit);
+        }
+
+        return static::substr($string, 0, $limit);
     }
 
     /**
