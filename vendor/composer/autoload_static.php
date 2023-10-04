@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitf9226684efeb05f271534e6ec7592f83
+class ComposerStaticInitc5fa062508950670d11fafcc55f4a34d
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -1786,6 +1786,7 @@ class ComposerStaticInitf9226684efeb05f271534e6ec7592f83
         'Illuminate\\Console\\Events\\ScheduledTaskSkipped' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Console/Events/ScheduledTaskSkipped.php',
         'Illuminate\\Console\\Events\\ScheduledTaskStarting' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Console/Events/ScheduledTaskStarting.php',
         'Illuminate\\Console\\GeneratorCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Console/GeneratorCommand.php',
+        'Illuminate\\Console\\MigrationGeneratorCommand' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Console/MigrationGeneratorCommand.php',
         'Illuminate\\Console\\OutputStyle' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Console/OutputStyle.php',
         'Illuminate\\Console\\Parser' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Console/Parser.php',
         'Illuminate\\Console\\QuestionHelper' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Console/QuestionHelper.php',
@@ -6561,9 +6562,9 @@ class ComposerStaticInitf9226684efeb05f271534e6ec7592f83
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitf9226684efeb05f271534e6ec7592f83::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitf9226684efeb05f271534e6ec7592f83::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitf9226684efeb05f271534e6ec7592f83::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitc5fa062508950670d11fafcc55f4a34d::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitc5fa062508950670d11fafcc55f4a34d::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitc5fa062508950670d11fafcc55f4a34d::$classMap;
 
         }, null, ClassLoader::class);
     }

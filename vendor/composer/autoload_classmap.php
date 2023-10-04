@@ -1258,6 +1258,7 @@ return array(
     'Illuminate\\Console\\Events\\ScheduledTaskSkipped' => $vendorDir . '/laravel/framework/src/Illuminate/Console/Events/ScheduledTaskSkipped.php',
     'Illuminate\\Console\\Events\\ScheduledTaskStarting' => $vendorDir . '/laravel/framework/src/Illuminate/Console/Events/ScheduledTaskStarting.php',
     'Illuminate\\Console\\GeneratorCommand' => $vendorDir . '/laravel/framework/src/Illuminate/Console/GeneratorCommand.php',
+    'Illuminate\\Console\\MigrationGeneratorCommand' => $vendorDir . '/laravel/framework/src/Illuminate/Console/MigrationGeneratorCommand.php',
     'Illuminate\\Console\\OutputStyle' => $vendorDir . '/laravel/framework/src/Illuminate/Console/OutputStyle.php',
     'Illuminate\\Console\\Parser' => $vendorDir . '/laravel/framework/src/Illuminate/Console/Parser.php',
     'Illuminate\\Console\\QuestionHelper' => $vendorDir . '/laravel/framework/src/Illuminate/Console/QuestionHelper.php',
