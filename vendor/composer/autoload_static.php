@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit18c6a8e57758befc651f3bd88ddcf7f0
+class ComposerStaticInit39eaf8c8950a066c845c8c43e9751cfc
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -2861,7 +2861,7 @@ class ComposerStaticInit18c6a8e57758befc651f3bd88ddcf7f0
         'Laravel\\Prompts\\Concerns\\FakesInputOutput' => __DIR__ . '/..' . '/laravel/prompts/src/Concerns/FakesInputOutput.php',
         'Laravel\\Prompts\\Concerns\\Fallback' => __DIR__ . '/..' . '/laravel/prompts/src/Concerns/Fallback.php',
         'Laravel\\Prompts\\Concerns\\Interactivity' => __DIR__ . '/..' . '/laravel/prompts/src/Concerns/Interactivity.php',
-        'Laravel\\Prompts\\Concerns\\ReducesScrollingToFitTerminal' => __DIR__ . '/..' . '/laravel/prompts/src/Concerns/ReducesScrollingToFitTerminal.php',
+        'Laravel\\Prompts\\Concerns\\Scrolling' => __DIR__ . '/..' . '/laravel/prompts/src/Concerns/Scrolling.php',
         'Laravel\\Prompts\\Concerns\\Termwind' => __DIR__ . '/..' . '/laravel/prompts/src/Concerns/Termwind.php',
         'Laravel\\Prompts\\Concerns\\Themes' => __DIR__ . '/..' . '/laravel/prompts/src/Concerns/Themes.php',
         'Laravel\\Prompts\\Concerns\\Truncation' => __DIR__ . '/..' . '/laravel/prompts/src/Concerns/Truncation.php',
@@ -3270,6 +3270,7 @@ class ComposerStaticInit18c6a8e57758befc651f3bd88ddcf7f0
         'League\\Flysystem\\PathTraversalDetected' => __DIR__ . '/..' . '/league/flysystem/src/PathTraversalDetected.php',
         'League\\Flysystem\\PortableVisibilityGuard' => __DIR__ . '/..' . '/league/flysystem/src/PortableVisibilityGuard.php',
         'League\\Flysystem\\ProxyArrayAccessToProperties' => __DIR__ . '/..' . '/league/flysystem/src/ProxyArrayAccessToProperties.php',
+        'League\\Flysystem\\ResolveIdenticalPathConflict' => __DIR__ . '/..' . '/league/flysystem/src/ResolveIdenticalPathConflict.php',
         'League\\Flysystem\\StorageAttributes' => __DIR__ . '/..' . '/league/flysystem/src/StorageAttributes.php',
         'League\\Flysystem\\SymbolicLinkEncountered' => __DIR__ . '/..' . '/league/flysystem/src/SymbolicLinkEncountered.php',
         'League\\Flysystem\\UnableToCheckDirectoryExistence' => __DIR__ . '/..' . '/league/flysystem/src/UnableToCheckDirectoryExistence.php',
@@ -6582,9 +6583,9 @@ class ComposerStaticInit18c6a8e57758befc651f3bd88ddcf7f0
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit18c6a8e57758befc651f3bd88ddcf7f0::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit18c6a8e57758befc651f3bd88ddcf7f0::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit18c6a8e57758befc651f3bd88ddcf7f0::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit39eaf8c8950a066c845c8c43e9751cfc::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit39eaf8c8950a066c845c8c43e9751cfc::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit39eaf8c8950a066c845c8c43e9751cfc::$classMap;
 
         }, null, ClassLoader::class);
     }
