@@ -2292,6 +2292,7 @@ class ComposerStaticInit7e8c3c14ff33b199b4a0838993eb8423
         'Illuminate\\Foundation\\Events\\MaintenanceModeDisabled' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Events/MaintenanceModeDisabled.php',
         'Illuminate\\Foundation\\Events\\MaintenanceModeEnabled' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Events/MaintenanceModeEnabled.php',
         'Illuminate\\Foundation\\Events\\PublishingStubs' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Events/PublishingStubs.php',
+        'Illuminate\\Foundation\\Events\\Terminating' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Events/Terminating.php',
         'Illuminate\\Foundation\\Events\\VendorTagPublished' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Events/VendorTagPublished.php',
         'Illuminate\\Foundation\\Exceptions\\Handler' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php',
         'Illuminate\\Foundation\\Exceptions\\RegisterErrorViewPaths' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Exceptions/RegisterErrorViewPaths.php',
