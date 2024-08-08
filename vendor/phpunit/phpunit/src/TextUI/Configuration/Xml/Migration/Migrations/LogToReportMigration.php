@@ -9,6 +9,7 @@
  */
 namespace PHPUnit\TextUI\XmlConfiguration;
 
+use function assert;
 use function sprintf;
 use DOMDocument;
 use DOMElement;
@@ -50,6 +51,9 @@ abstract readonly class LogToReportMigration implements Migration
         $logNode->parentNode->removeChild($logNode);
     }
 
+    /**
+     * @param list<non-empty-string> $attributes
+     */
     protected function migrateAttributes(DOMElement $src, DOMElement $dest, array $attributes): void
     {
         foreach ($attributes as $attr) {
@@ -68,9 +72,18 @@ abstract readonly class LogToReportMigration implements Migration
 
     private function findLogNode(DOMDocument $document): ?DOMElement
     {
-        $logNode = (new DOMXPath($document))->query(
-            sprintf('//logging/log[@type="%s"]', $this->forType()),
-        )->item(0);
+        $xpath = new DOMXPath($document);
+
+        $logNode = $xpath->query(
+            sprintf(
+                '//logging/log[@type="%s"]',
+                $this->forType(),
+            ),
+        );
+
+        assert($logNode !== false);
+
+        $logNode = $logNode->item(0);
 
         if (!$logNode instanceof DOMElement) {
             return null;

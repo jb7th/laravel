@@ -21,8 +21,14 @@ use PHPUnit\Framework\MockObject\Invocation;
  */
 final readonly class ReturnValueMap implements Stub
 {
+    /**
+     * @var array<mixed>
+     */
     private array $valueMap;
 
+    /**
+     * @param array<mixed> $valueMap
+     */
     public function __construct(array $valueMap)
     {
         $this->valueMap = $valueMap;

@@ -18,10 +18,13 @@ use function assert;
  */
 final class TestDoubleState
 {
+    /**
+     * @var array<non-empty-string, true>
+     */
     private static array $deprecationEmittedForTest = [];
 
     /**
-     * @psalm-var list<ConfigurableMethod>
+     * @var list<ConfigurableMethod>
      */
     private readonly array $configurableMethods;
     private readonly bool $generateReturnValues;
@@ -29,7 +32,7 @@ final class TestDoubleState
     private ?object $proxyTarget                  = null;
 
     /**
-     * @psalm-param list<ConfigurableMethod> $configurableMethods
+     * @param list<ConfigurableMethod> $configurableMethods
      */
     public function __construct(array $configurableMethods, bool $generateReturnValues)
     {
@@ -77,11 +80,17 @@ final class TestDoubleState
         return $this->proxyTarget;
     }
 
+    /**
+     * @param non-empty-string $testId
+     */
     public function deprecationWasEmittedFor(string $testId): void
     {
         self::$deprecationEmittedForTest[$testId] = true;
     }
 
+    /**
+     * @param non-empty-string $testId
+     */
     public function wasDeprecationAlreadyEmittedFor(string $testId): bool
     {
         return isset(self::$deprecationEmittedForTest[$testId]);

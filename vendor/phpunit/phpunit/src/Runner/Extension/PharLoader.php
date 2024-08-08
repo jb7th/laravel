@@ -33,9 +33,9 @@ use Throwable;
 final readonly class PharLoader
 {
     /**
-     * @psalm-param non-empty-string $directory
+     * @param non-empty-string $directory
      *
-     * @psalm-return list<string>
+     * @return list<string>
      */
     public function loadPharExtensionsInDirectory(string $directory): array
     {
@@ -105,7 +105,6 @@ final readonly class PharLoader
             }
 
             try {
-                /** @psalm-suppress UnresolvableInclude */
                 @require $file;
             } catch (Throwable $t) {
                 Event\Facade::emitter()->testRunnerTriggeredWarning(

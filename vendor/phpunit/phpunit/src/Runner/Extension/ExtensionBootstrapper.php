@@ -37,8 +37,8 @@ final readonly class ExtensionBootstrapper
     }
 
     /**
-     * @psalm-param class-string $className
-     * @psalm-param array<string, string> $parameters
+     * @param non-empty-string      $className
+     * @param array<string, string> $parameters
      */
     public function bootstrap(string $className, array $parameters): void
     {

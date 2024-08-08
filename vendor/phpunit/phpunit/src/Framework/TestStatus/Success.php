@@ -10,7 +10,7 @@
 namespace PHPUnit\Framework\TestStatus;
 
 /**
- * @psalm-immutable
+ * @immutable
  *
  * @no-named-arguments Parameter names are not covered by the backward compatibility promise for PHPUnit
  *
@@ -18,10 +18,7 @@ namespace PHPUnit\Framework\TestStatus;
  */
 final readonly class Success extends Known
 {
-    /**
-     * @psalm-assert-if-true Success $this
-     */
-    public function isSuccess(): bool
+    public function isSuccess(): true
     {
         return true;
     }

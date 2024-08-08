@@ -10,7 +10,7 @@
 namespace PHPUnit\Framework\TestStatus;
 
 /**
- * @psalm-immutable
+ * @immutable
  *
  * @no-named-arguments Parameter names are not covered by the backward compatibility promise for PHPUnit
  *
@@ -18,10 +18,7 @@ namespace PHPUnit\Framework\TestStatus;
  */
 final readonly class Incomplete extends Known
 {
-    /**
-     * @psalm-assert-if-true Incomplete $this
-     */
-    public function isIncomplete(): bool
+    public function isIncomplete(): true
     {
         return true;
     }

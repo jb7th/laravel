@@ -10,7 +10,7 @@
 namespace PHPUnit\Util\PHP;
 
 /**
- * @psalm-immutable
+ * @immutable
  *
  * @no-named-arguments Parameter names are not covered by the backward compatibility promise for PHPUnit
  *
@@ -19,32 +19,37 @@ namespace PHPUnit\Util\PHP;
 final readonly class Job
 {
     /**
-     * @psalm-var non-empty-string
+     * @var non-empty-string
      */
     private string $code;
+
+    /**
+     * @var list<string>
+     */
     private array $phpSettings;
 
     /**
-     * @psalm-var array<string, string>
+     * @var array<string, string>
      */
     private array $environmentVariables;
 
     /**
-     * @psalm-var list<non-empty-string>
+     * @var list<non-empty-string>
      */
     private array $arguments;
 
     /**
-     * @psalm-var ?non-empty-string
+     * @var ?non-empty-string
      */
     private ?string $input;
     private bool $redirectErrors;
 
     /**
-     * @psalm-param non-empty-string $code
-     * @psalm-param array<string, string> $environmentVariables
-     * @psalm-param list<non-empty-string> $arguments
-     * @psalm-param ?non-empty-string $input
+     * @param non-empty-string       $code
+     * @param list<string>           $phpSettings
+     * @param array<string, string>  $environmentVariables
+     * @param list<non-empty-string> $arguments
+     * @param ?non-empty-string      $input
      */
     public function __construct(string $code, array $phpSettings = [], array $environmentVariables = [], array $arguments = [], ?string $input = null, bool $redirectErrors = false)
     {
@@ -57,20 +62,23 @@ final readonly class Job
     }
 
     /**
-     * @psalm-return non-empty-string
+     * @return non-empty-string
      */
     public function code(): string
     {
         return $this->code;
     }
 
+    /**
+     * @return list<string>
+     */
     public function phpSettings(): array
     {
         return $this->phpSettings;
     }
 
     /**
-     * @psalm-assert-if-true !empty $this->environmentVariables
+     * @phpstan-assert-if-true !empty $this->environmentVariables
      */
     public function hasEnvironmentVariables(): bool
     {
@@ -78,7 +86,7 @@ final readonly class Job
     }
 
     /**
-     * @psalm-return array<string, string>
+     * @return array<string, string>
      */
     public function environmentVariables(): array
     {
@@ -86,7 +94,7 @@ final readonly class Job
     }
 
     /**
-     * @psalm-assert-if-true !empty $this->arguments
+     * @phpstan-assert-if-true !empty $this->arguments
      */
     public function hasArguments(): bool
     {
@@ -94,7 +102,7 @@ final readonly class Job
     }
 
     /**
-     * @psalm-return list<non-empty-string>
+     * @return list<non-empty-string>
      */
     public function arguments(): array
     {
@@ -102,7 +110,7 @@ final readonly class Job
     }
 
     /**
-     * @psalm-assert-if-true !empty $this->input
+     * @phpstan-assert-if-true !empty $this->input
      */
     public function hasInput(): bool
     {
@@ -110,9 +118,9 @@ final readonly class Job
     }
 
     /**
-     * @psalm-return non-empty-string
-     *
      * @throws PhpProcessException
+     *
+     * @return non-empty-string
      */
     public function input(): string
     {

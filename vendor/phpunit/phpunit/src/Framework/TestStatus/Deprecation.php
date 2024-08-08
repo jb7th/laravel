@@ -10,7 +10,7 @@
 namespace PHPUnit\Framework\TestStatus;
 
 /**
- * @psalm-immutable
+ * @immutable
  *
  * @no-named-arguments Parameter names are not covered by the backward compatibility promise for PHPUnit
  *
@@ -18,10 +18,7 @@ namespace PHPUnit\Framework\TestStatus;
  */
 final readonly class Deprecation extends Known
 {
-    /**
-     * @psalm-assert-if-true Deprecation $this
-     */
-    public function isDeprecation(): bool
+    public function isDeprecation(): true
     {
         return true;
     }

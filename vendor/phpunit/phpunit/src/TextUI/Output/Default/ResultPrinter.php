@@ -355,8 +355,8 @@ final class ResultPrinter
     }
 
     /**
-     * @psalm-param non-empty-string $type
-     * @psalm-param list<Issue> $issues
+     * @param non-empty-string $type
+     * @param list<Issue>      $issues
      */
     private function printIssueList(string $type, array $issues): void
     {
@@ -460,7 +460,7 @@ final class ResultPrinter
     }
 
     /**
-     * @psalm-param list<array{title: string, body: string}> $elements
+     * @param list<array{title: string, body: string}> $elements
      */
     private function printList(array $elements): void
     {
@@ -524,9 +524,9 @@ final class ResultPrinter
     }
 
     /**
-     * @psalm-param array<string,list<ConsideredRisky|DeprecationTriggered|PhpDeprecationTriggered|PhpunitDeprecationTriggered|ErrorTriggered|NoticeTriggered|PhpNoticeTriggered|WarningTriggered|PhpWarningTriggered|PhpunitErrorTriggered|PhpunitWarningTriggered>> $events
+     * @param array<string,list<ConsideredRisky|DeprecationTriggered|ErrorTriggered|NoticeTriggered|PhpDeprecationTriggered|PhpNoticeTriggered|PhpunitDeprecationTriggered|PhpunitErrorTriggered|PhpunitWarningTriggered|PhpWarningTriggered|WarningTriggered>> $events
      *
-     * @psalm-return array{numberOfTestsWithIssues: int, numberOfIssues: int, elements: list<array{title: string, body: string}>}
+     * @return array{numberOfTestsWithIssues: int, numberOfIssues: int, elements: list<array{title: string, body: string}>}
      */
     private function mapTestsWithIssuesEventsToElements(array $events): array
     {

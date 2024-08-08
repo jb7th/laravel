@@ -12,6 +12,7 @@ namespace PHPUnit\TextUI\CliArguments;
 use const DIRECTORY_SEPARATOR;
 use function array_map;
 use function array_merge;
+use function assert;
 use function basename;
 use function explode;
 use function getcwd;
@@ -123,6 +124,7 @@ final class Builder
         'strict-global-state',
         'teamcity',
         'testdox',
+        'testdox-summary',
         'testdox-html=',
         'testdox-text=',
         'test-suffix=',
@@ -132,15 +134,18 @@ final class Builder
         'log-events-verbose-text=',
         'version',
         'debug',
+        'extension=',
     ];
     private const SHORT_OPTIONS = 'd:c:h';
 
     /**
-     * @psalm-var array<string, non-negative-int>
+     * @var array<string, non-negative-int>
      */
     private array $processed = [];
 
     /**
+     * @param list<string> $parameters
+     *
      * @throws Exception
      */
     public function fromParameters(array $parameters): Configuration
@@ -255,7 +260,9 @@ final class Builder
         $logEventsVerboseText              = null;
         $printerTeamCity                   = null;
         $printerTestDox                    = null;
+        $printerTestDoxSummary             = null;
         $debug                             = false;
+        $extensions                        = [];
 
         foreach ($options[0] as $option) {
             $optionAllowedMultipleTimes = false;
@@ -364,7 +371,11 @@ final class Builder
                     $tmp = explode('=', $option[1]);
 
                     if (isset($tmp[0])) {
+                        assert($tmp[0] !== '');
+
                         if (isset($tmp[1])) {
+                            assert($tmp[1] !== '');
+
                             $iniSettings[$tmp[0]] = $tmp[1];
                         } else {
                             $iniSettings[$tmp[0]] = '1';
@@ -716,6 +727,11 @@ final class Builder
 
                     break;
 
+                case '--testdox-summary':
+                    $printerTestDoxSummary = true;
+
+                    break;
+
                 case '--testdox-html':
                     $testdoxHtmlFile = $option[1];
 
@@ -924,6 +940,13 @@ final class Builder
                     $debug = true;
 
                     break;
+
+                case '--extension':
+                    $extensions[] = $option[1];
+
+                    $optionAllowedMultipleTimes = true;
+
+                    break;
             }
 
             if (!$optionAllowedMultipleTimes) {
@@ -937,6 +960,10 @@ final class Builder
 
         if (empty($coverageFilter)) {
             $coverageFilter = null;
+        }
+
+        if (empty($extensions)) {
+            $extensions = null;
         }
 
         return new Configuration(
@@ -1037,12 +1064,14 @@ final class Builder
             $logEventsVerboseText,
             $printerTeamCity,
             $printerTestDox,
+            $printerTestDoxSummary,
             $debug,
+            $extensions,
         );
     }
 
     /**
-     * @psalm-param non-empty-string $option
+     * @param non-empty-string $option
      */
     private function markProcessed(string $option): void
     {

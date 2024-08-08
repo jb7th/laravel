@@ -51,7 +51,7 @@ use ReflectionMethod;
 final class TestResultCollector
 {
     /**
-     * @psalm-var array<string, list<TestDoxTestMethod>>
+     * @var array<string, list<TestDoxTestMethod>>
      */
     private array $tests          = [];
     private ?TestStatus $status   = null;
@@ -68,7 +68,7 @@ final class TestResultCollector
     }
 
     /**
-     * @psalm-return array<string, TestResultCollection>
+     * @return array<string, TestResultCollection>
      */
     public function testMethodsGroupedByClass(): array
     {
@@ -100,8 +100,8 @@ final class TestResultCollector
             uksort(
                 $testsByDeclaringClass,
                 /**
-                 * @psalm-param class-string $a
-                 * @psalm-param class-string $b
+                 * @param class-string $a
+                 * @param class-string $b
                  */
                 static function (string $a, string $b): int
                 {

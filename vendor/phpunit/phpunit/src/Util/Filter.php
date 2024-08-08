@@ -75,6 +75,9 @@ final readonly class Filter
         return $filteredStacktrace;
     }
 
+    /**
+     * @param array{file?: non-empty-string} $frame
+     */
     private static function shouldPrintFrame(array $frame, false|string $prefix, ExcludeList $excludeList): bool
     {
         if (!isset($frame['file'])) {
@@ -88,7 +91,9 @@ final readonly class Filter
         if (isset($GLOBALS['_SERVER']['SCRIPT_NAME'])) {
             $script = realpath($GLOBALS['_SERVER']['SCRIPT_NAME']);
         } else {
+            // @codeCoverageIgnoreStart
             $script = '';
+            // @codeCoverageIgnoreEnd
         }
 
         return $fileIsNotPrefixed &&
@@ -104,6 +109,9 @@ final readonly class Filter
                 !$excludeList->isExcluded($file);
     }
 
+    /**
+     * @param list<array{file?: non-empty-string, line?: int}> $trace
+     */
     private static function frameExists(array $trace, string $file, int $line): bool
     {
         foreach ($trace as $frame) {

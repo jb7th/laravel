@@ -29,7 +29,7 @@ use PHPUnit\TextUI\XmlConfiguration\Logging\Logging;
  *
  * @internal This class is not covered by the backward compatibility promise for PHPUnit
  *
- * @psalm-immutable
+ * @immutable
  */
 final readonly class DefaultConfiguration extends Configuration
 {
@@ -148,7 +148,9 @@ final readonly class DefaultConfiguration extends Configuration
                 false,
                 false,
                 false,
+                false,
                 100,
+                0,
             ),
             TestSuiteCollection::fromArray([]),
         );

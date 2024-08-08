@@ -32,10 +32,10 @@ final class Facade
     }
 
     /**
-     * @psalm-return list<non-empty-string>
-     *
      * @throws EventFacadeIsSealedException
      * @throws UnknownSubscriberTypeException
+     *
+     * @return list<non-empty-string>
      */
     public static function deprecations(): array
     {

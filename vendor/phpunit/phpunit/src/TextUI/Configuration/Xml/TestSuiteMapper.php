@@ -34,7 +34,7 @@ use SebastianBergmann\FileIterator\Facade;
 final readonly class TestSuiteMapper
 {
     /**
-     * @psalm-param non-empty-string $xmlConfigurationFile,
+     * @param non-empty-string $xmlConfigurationFile,
      *
      * @throws RuntimeException
      * @throws TestDirectoryNotFoundException

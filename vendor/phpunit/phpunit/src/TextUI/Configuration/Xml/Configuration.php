@@ -21,7 +21,7 @@ use PHPUnit\TextUI\XmlConfiguration\Logging\Logging;
  *
  * @internal This class is not covered by the backward compatibility promise for PHPUnit
  *
- * @psalm-immutable
+ * @immutable
  */
 abstract readonly class Configuration
 {
@@ -87,7 +87,7 @@ abstract readonly class Configuration
     }
 
     /**
-     * @psalm-assert-if-true DefaultConfiguration $this
+     * @phpstan-assert-if-true DefaultConfiguration $this
      */
     public function isDefault(): bool
     {
@@ -95,7 +95,7 @@ abstract readonly class Configuration
     }
 
     /**
-     * @psalm-assert-if-true LoadedFromFileConfiguration $this
+     * @phpstan-assert-if-true LoadedFromFileConfiguration $this
      */
     public function wasLoadedFromFile(): bool
     {

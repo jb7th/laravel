@@ -23,7 +23,7 @@ use PHPUnit\TextUI\XmlConfiguration\Exception;
  *
  * @internal This class is not covered by the backward compatibility promise for PHPUnit
  *
- * @psalm-immutable
+ * @immutable
  */
 final readonly class CodeCoverage
 {
@@ -75,7 +75,7 @@ final readonly class CodeCoverage
     }
 
     /**
-     * @psalm-assert-if-true !null $this->clover
+     * @phpstan-assert-if-true !null $this->clover
      */
     public function hasClover(): bool
     {
@@ -97,7 +97,7 @@ final readonly class CodeCoverage
     }
 
     /**
-     * @psalm-assert-if-true !null $this->cobertura
+     * @phpstan-assert-if-true !null $this->cobertura
      */
     public function hasCobertura(): bool
     {
@@ -119,7 +119,7 @@ final readonly class CodeCoverage
     }
 
     /**
-     * @psalm-assert-if-true !null $this->crap4j
+     * @phpstan-assert-if-true !null $this->crap4j
      */
     public function hasCrap4j(): bool
     {
@@ -141,7 +141,7 @@ final readonly class CodeCoverage
     }
 
     /**
-     * @psalm-assert-if-true !null $this->html
+     * @phpstan-assert-if-true !null $this->html
      */
     public function hasHtml(): bool
     {
@@ -163,7 +163,7 @@ final readonly class CodeCoverage
     }
 
     /**
-     * @psalm-assert-if-true !null $this->php
+     * @phpstan-assert-if-true !null $this->php
      */
     public function hasPhp(): bool
     {
@@ -185,7 +185,7 @@ final readonly class CodeCoverage
     }
 
     /**
-     * @psalm-assert-if-true !null $this->text
+     * @phpstan-assert-if-true !null $this->text
      */
     public function hasText(): bool
     {
@@ -207,7 +207,7 @@ final readonly class CodeCoverage
     }
 
     /**
-     * @psalm-assert-if-true !null $this->xml
+     * @phpstan-assert-if-true !null $this->xml
      */
     public function hasXml(): bool
     {

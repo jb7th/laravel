@@ -86,9 +86,9 @@ final readonly class TestSuiteBuilder
     }
 
     /**
-     * @psalm-param non-empty-string $path
-     * @psalm-param list<non-empty-string> $suffixes
-     * @psalm-param ?TestSuite $suite
+     * @param non-empty-string       $path
+     * @param list<non-empty-string> $suffixes
+     * @param ?TestSuite             $suite
      *
      * @throws \PHPUnit\Framework\Exception
      */
@@ -128,8 +128,8 @@ final readonly class TestSuiteBuilder
     }
 
     /**
-     * @psalm-param list<non-empty-string> $paths
-     * @psalm-param list<non-empty-string> $suffixes
+     * @param list<non-empty-string> $paths
+     * @param list<non-empty-string> $suffixes
      *
      * @throws \PHPUnit\Framework\Exception
      */

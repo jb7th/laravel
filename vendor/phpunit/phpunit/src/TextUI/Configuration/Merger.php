@@ -237,6 +237,15 @@ final readonly class Merger
 
         $extensionBootstrappers = [];
 
+        if ($cliConfiguration->hasExtensions()) {
+            foreach ($cliConfiguration->extensions() as $extension) {
+                $extensionBootstrappers[] = [
+                    'className'  => $extension,
+                    'parameters' => [],
+                ];
+            }
+        }
+
         foreach ($xmlConfiguration->extensions() as $extension) {
             $extensionBootstrappers[] = [
                 'className'  => $extension->className(),
@@ -557,6 +566,12 @@ final readonly class Merger
             $testDoxOutput = $xmlConfiguration->phpunit()->testdoxPrinter();
         }
 
+        if ($cliConfiguration->hasTestDoxPrinterSummary() && $cliConfiguration->testdoxPrinterSummary()) {
+            $testDoxOutputSummary = true;
+        } else {
+            $testDoxOutputSummary = $xmlConfiguration->phpunit()->testdoxPrinterSummary();
+        }
+
         $noProgress = false;
 
         if ($cliConfiguration->hasNoProgress() && $cliConfiguration->noProgress()) {
@@ -710,6 +725,26 @@ final readonly class Merger
         assert($useBaseline !== '');
         assert($generateBaseline !== '');
 
+        if ($failOnDeprecation) {
+            $displayDetailsOnTestsThatTriggerDeprecations = true;
+        }
+
+        if ($failOnNotice) {
+            $displayDetailsOnTestsThatTriggerNotices = true;
+        }
+
+        if ($failOnWarning) {
+            $displayDetailsOnTestsThatTriggerWarnings = true;
+        }
+
+        if ($failOnIncomplete) {
+            $displayDetailsOnIncompleteTests = true;
+        }
+
+        if ($failOnSkipped) {
+            $displayDetailsOnSkippedTests = true;
+        }
+
         return new Configuration(
             $cliConfiguration->arguments(),
             $configurationFile,
@@ -817,6 +852,7 @@ final readonly class Merger
             $logEventsVerboseText,
             $teamCityOutput,
             $testDoxOutput,
+            $testDoxOutputSummary,
             $testsCovering,
             $testsUsing,
             $filter,
@@ -847,6 +883,7 @@ final readonly class Merger
             $xmlConfiguration->phpunit()->numberOfTestsBeforeGarbageCollection(),
             $generateBaseline,
             $cliConfiguration->debug(),
+            $xmlConfiguration->phpunit()->shortenArraysForExportThreshold(),
         );
     }
 }
