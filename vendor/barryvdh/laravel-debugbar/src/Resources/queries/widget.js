@@ -229,7 +229,11 @@
                     .attr('data-duplicate', false)
                     .append($('<strong />').addClass(csscls('sql name')).text(statement.sql));
             } else {
-                const $code = $('<code />').html(PhpDebugBar.Widgets.highlight(statement.sql, 'sql')).addClass(csscls('sql'));
+                const $code = $('<code />').html(PhpDebugBar.Widgets.highlight(statement.sql, 'sql')).addClass(csscls('sql'));                
+                $li.attr('data-connection', statement.connection)
+                    .attr('data-duplicate', this.duplicateQueries.has(statement))
+                    .append($code);
+
                 if (statement.show_copy) {
                     $('<span title="Copy to clipboard" />')
                         .addClass(csscls('copy-clipboard'))
@@ -242,11 +246,8 @@
                                     $(event.target).removeClass(csscls('copy-clipboard-check'));
                                 }, 2000)
                             }
-                        }).appendTo($code);
+                        }).appendTo($li);
                 }
-                $li.attr('data-connection', statement.connection)
-                    .attr('data-duplicate', this.duplicateQueries.has(statement))
-                    .append($code);
             }
 
             if (statement.width_percent) {
@@ -334,16 +335,18 @@
             const $li = $('<li />').addClass(csscls('table-list-item'));
             const $muted = $('<span />').addClass(css('text-muted'));
 
-            for (const i in values.values()) {
+            let i = 0;
+            for (const value of values) {
                 if (showLineNumbers) {
-                    $ul.append($li.clone().append([$muted.clone().text(`${i}:`), '&nbsp;', $('<span/>').text(values[i])]));
+                    $ul.append($li.clone().append([$muted.clone().text(`${i}:`), '&nbsp;', $('<span/>').text(value)]));
                 } else {
                     if (caption === 'Hints') {
-                        $ul.append($li.clone().append(values[i]));
+                        $ul.append($li.clone().append(value));
                     } else {
-                        $ul.append($li.clone().text(values[i]));
+                        $ul.append($li.clone().text(value));
                     }
                 }
+                i++;
             }
 
             return this.renderDetail(caption, icon, $ul);
