@@ -14,6 +14,7 @@ use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\CallQueuedClosure;
+use Illuminate\Support\Collection;
 use Illuminate\Support\ProcessUtils;
 use Illuminate\Support\Traits\Macroable;
 use RuntimeException;
@@ -184,7 +185,7 @@ class Schedule
                 : $job::class;
         }
 
-        return $this->call(function () use ($job, $queue, $connection) {
+        return $this->name($jobName)->call(function () use ($job, $queue, $connection) {
             $job = is_string($job) ? Container::getInstance()->make($job) : $job;
 
             if ($job instanceof ShouldQueue) {
@@ -192,7 +193,7 @@ class Schedule
             } else {
                 $this->dispatchNow($job);
             }
-        })->name($jobName);
+        });
     }
 
     /**
@@ -332,7 +333,7 @@ class Schedule
      */
     protected function compileParameters(array $parameters)
     {
-        return collect($parameters)->map(function ($value, $key) {
+        return (new Collection($parameters))->map(function ($value, $key) {
             if (is_array($value)) {
                 return $this->compileArrayInput($key, $value);
             }
@@ -354,7 +355,7 @@ class Schedule
      */
     public function compileArrayInput($key, $value)
     {
-        $value = collect($value)->map(function ($value) {
+        $value = (new Collection($value))->map(function ($value) {
             return ProcessUtils::escapeArgument($value);
         });
 
@@ -391,7 +392,7 @@ class Schedule
      */
     public function dueEvents($app)
     {
-        return collect($this->events)->filter->isDue($app);
+        return (new Collection($this->events))->filter->isDue($app);
     }
 
     /**

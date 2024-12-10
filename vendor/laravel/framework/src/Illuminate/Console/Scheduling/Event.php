@@ -60,13 +60,6 @@ class Event
     protected $afterCallbacks = [];
 
     /**
-     * The human readable description of the event.
-     *
-     * @var string|null
-     */
-    public $description;
-
-    /**
      * The event mutex implementation.
      *
      * @var \Illuminate\Console\Scheduling\EventMutex
@@ -539,6 +532,18 @@ class Event
     }
 
     /**
+     * Register a callback to ping a given URL if the operation succeeds and if the given condition is true.
+     *
+     * @param  bool  $value
+     * @param  string  $url
+     * @return $this
+     */
+    public function pingOnSuccessIf($value, $url)
+    {
+        return $value ? $this->onSuccess($this->pingCallback($url)) : $this;
+    }
+
+    /**
      * Register a callback to ping a given URL if the operation fails.
      *
      * @param  string  $url
@@ -547,6 +552,18 @@ class Event
     public function pingOnFailure($url)
     {
         return $this->onFailure($this->pingCallback($url));
+    }
+
+    /**
+     * Register a callback to ping a given URL if the operation fails and if the given condition is true.
+     *
+     * @param  bool  $value
+     * @param  string  $url
+     * @return $this
+     */
+    public function pingOnFailureIf($value, $url)
+    {
+        return $value ? $this->onFailure($this->pingCallback($url)) : $this;
     }
 
     /**
@@ -728,30 +745,6 @@ class Event
                             ? null
                             : $container->call($callback, ['output' => new Stringable($output)]);
         };
-    }
-
-    /**
-     * Set the human-friendly description of the event.
-     *
-     * @param  string  $description
-     * @return $this
-     */
-    public function name($description)
-    {
-        return $this->description($description);
-    }
-
-    /**
-     * Set the human-friendly description of the event.
-     *
-     * @param  string  $description
-     * @return $this
-     */
-    public function description($description)
-    {
-        $this->description = $description;
-
-        return $this;
     }
 
     /**

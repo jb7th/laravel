@@ -494,7 +494,7 @@ class Collection implements ArrayAccess, CanBeEscapedWhenCastToString, Enumerabl
      *
      * @param  (callable(TValue, TKey): TGroupKey)|array|string  $groupBy
      * @param  bool  $preserveKeys
-     * @return static<($groupBy is string ? array-key : ($groupBy is array ? array-key : TGroupKey)), static<($preserveKeys is true ? TKey : int), TValue>>
+     * @return static<($groupBy is string ? array-key : ($groupBy is array ? array-key : TGroupKey)), static<($preserveKeys is true ? TKey : int), ($groupBy is array ? mixed : TValue)>>
      */
     public function groupBy($groupBy, $preserveKeys = false)
     {
@@ -995,7 +995,7 @@ class Collection implements ArrayAccess, CanBeEscapedWhenCastToString, Enumerabl
         $collectionCount = $this->count();
 
         foreach (range(1, min($count, $collectionCount)) as $item) {
-            array_push($results, array_pop($this->items));
+            $results[] = array_pop($this->items);
         }
 
         return new static($results);
@@ -1246,7 +1246,7 @@ class Collection implements ArrayAccess, CanBeEscapedWhenCastToString, Enumerabl
         $collectionCount = $this->count();
 
         foreach (range(1, min($count, $collectionCount)) as $item) {
-            array_push($results, array_shift($this->items));
+            $results[] = array_shift($this->items);
         }
 
         return new static($results);
