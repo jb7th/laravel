@@ -1988,6 +1988,7 @@ class ComposerStaticInit88970a0117c062eed55fa8728fc43833
         'Illuminate\\Contracts\\Translation\\HasLocalePreference' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Translation/HasLocalePreference.php',
         'Illuminate\\Contracts\\Translation\\Loader' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Translation/Loader.php',
         'Illuminate\\Contracts\\Translation\\Translator' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Translation/Translator.php',
+        'Illuminate\\Contracts\\Validation\\CompilableRules' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Validation/CompilableRules.php',
         'Illuminate\\Contracts\\Validation\\DataAwareRule' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Validation/DataAwareRule.php',
         'Illuminate\\Contracts\\Validation\\Factory' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Validation/Factory.php',
         'Illuminate\\Contracts\\Validation\\ImplicitRule' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Validation/ImplicitRule.php',

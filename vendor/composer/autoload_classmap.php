@@ -1467,6 +1467,7 @@ return array(
     'Illuminate\\Contracts\\Translation\\HasLocalePreference' => $vendorDir . '/laravel/framework/src/Illuminate/Contracts/Translation/HasLocalePreference.php',
     'Illuminate\\Contracts\\Translation\\Loader' => $vendorDir . '/laravel/framework/src/Illuminate/Contracts/Translation/Loader.php',
     'Illuminate\\Contracts\\Translation\\Translator' => $vendorDir . '/laravel/framework/src/Illuminate/Contracts/Translation/Translator.php',
+    'Illuminate\\Contracts\\Validation\\CompilableRules' => $vendorDir . '/laravel/framework/src/Illuminate/Contracts/Validation/CompilableRules.php',
     'Illuminate\\Contracts\\Validation\\DataAwareRule' => $vendorDir . '/laravel/framework/src/Illuminate/Contracts/Validation/DataAwareRule.php',
     'Illuminate\\Contracts\\Validation\\Factory' => $vendorDir . '/laravel/framework/src/Illuminate/Contracts/Validation/Factory.php',
     'Illuminate\\Contracts\\Validation\\ImplicitRule' => $vendorDir . '/laravel/framework/src/Illuminate/Contracts/Validation/ImplicitRule.php',
