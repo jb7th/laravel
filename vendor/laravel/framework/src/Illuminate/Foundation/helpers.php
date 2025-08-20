@@ -237,7 +237,7 @@ if (! function_exists('broadcast_if')) {
     function broadcast_if($boolean, $event = null)
     {
         if ($boolean) {
-            return app(BroadcastFactory::class)->event($event);
+            return app(BroadcastFactory::class)->event(value($event));
         } else {
             return new FakePendingBroadcast;
         }
@@ -255,7 +255,7 @@ if (! function_exists('broadcast_unless')) {
     function broadcast_unless($boolean, $event = null)
     {
         if (! $boolean) {
-            return app(BroadcastFactory::class)->event($event);
+            return app(BroadcastFactory::class)->event(value($event));
         } else {
             return new FakePendingBroadcast;
         }
@@ -947,6 +947,22 @@ if (! function_exists('storage_path')) {
     function storage_path($path = '')
     {
         return app()->storagePath($path);
+    }
+}
+
+if (! function_exists('to_action')) {
+    /**
+     * Create a new redirect response to a controller action.
+     *
+     * @param  string|array  $action
+     * @param  mixed  $parameters
+     * @param  int  $status
+     * @param  array  $headers
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    function to_action($action, $parameters = [], $status = 302, $headers = [])
+    {
+        return redirect()->action($action, $parameters, $status, $headers);
     }
 }
 
