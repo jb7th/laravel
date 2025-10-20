@@ -61,26 +61,13 @@ class LaravelLog extends Log
         $text = $firstLineText.($matches[8] ?? '').implode('', $firstLineSplit)."\n".$theRestOfIt;
 
         if (session()->get('log-viewer:shorter-stack-traces', false)) {
-            $excludes = config('log-viewer.shorter_stack_trace_excludes', []);
-            $emptyLineCharacter = '    ...';
-            $lines = explode("\n", $text);
-            $filteredLines = [];
-            foreach ($lines as $line) {
-                $shouldExclude = false;
-                foreach ($excludes as $excludePattern) {
-                    if (str_starts_with($line, '#') && str_contains($line, $excludePattern)) {
-                        $shouldExclude = true;
-                        break;
-                    }
-                }
-
-                if ($shouldExclude && end($filteredLines) !== $emptyLineCharacter) {
-                    $filteredLines[] = $emptyLineCharacter;
-                } elseif (! $shouldExclude) {
-                    $filteredLines[] = $line;
+            // Filter stack traces in text and context.
+            $text = $this->filterStackTrace($text);
+            foreach ($this->context as $key => $value) {
+                if (is_string($value)) {
+                    $this->context[$key] = $this->filterStackTrace($value);
                 }
             }
-            $text = implode("\n", $filteredLines);
         }
 
         if (strlen($text) > LogViewer::maxLogSize()) {
@@ -121,8 +108,8 @@ class LaravelLog extends Log
             $json_data = json_decode(trim($json_string), true);
 
             if (json_last_error() == JSON_ERROR_CTRL_CHAR) {
-                // might need to escape new lines
-                $json_data = json_decode(str_replace("\n", '\\n', $json_string), true);
+                // might need to escape new lines and carriage returns
+                $json_data = json_decode(str_replace(["\r\n", "\r", "\n"], ['\\n', '\\n', '\\n'], $json_string), true);
             }
 
             if (json_last_error() == JSON_ERROR_NONE) {
@@ -202,5 +189,34 @@ class LaravelLog extends Log
         }
 
         return $json_strings;
+    }
+
+    protected function filterStackTrace(string $text): string
+    {
+        // Normalize line endings for cross-platform compatibility
+        $text = str_replace("\r\n", "\n", $text);
+        $text = str_replace("\r", "\n", $text);
+
+        $lines = explode("\n", $text);
+        $filteredLines = [];
+        $emptyLineCharacter = '    ...';
+        $excludes = config('log-viewer.shorter_stack_trace_excludes', []);
+        foreach ($lines as $line) {
+            $shouldExclude = false;
+            foreach ($excludes as $excludePattern) {
+                if (str_starts_with($line, '#') && str_contains($line, $excludePattern)) {
+                    $shouldExclude = true;
+                    break;
+                }
+            }
+
+            if ($shouldExclude && end($filteredLines) !== $emptyLineCharacter) {
+                $filteredLines[] = $emptyLineCharacter;
+            } elseif (! $shouldExclude) {
+                $filteredLines[] = $line;
+            }
+        }
+
+        return implode("\n", $filteredLines);
     }
 }
