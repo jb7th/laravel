@@ -232,13 +232,13 @@ class NotificationSender
                 $connection = $notification->connection;
 
                 if (method_exists($notification, 'viaConnections')) {
-                    $connection = $notification->viaConnections()[$channel] ?? null;
+                    $connection = $notification->viaConnections()[$channel] ?? $connection;
                 }
 
                 $queue = $notification->queue;
 
                 if (method_exists($notification, 'viaQueues')) {
-                    $queue = $notification->viaQueues()[$channel] ?? null;
+                    $queue = $notification->viaQueues()[$channel] ?? $queue;
                 }
 
                 $delay = $notification->delay;
@@ -247,7 +247,7 @@ class NotificationSender
                     $delay = $notification->withDelay($notifiable, $channel) ?? null;
                 }
 
-                $messageGroup = $notification->messageGroup ?? null;
+                $messageGroup = $notification->messageGroup ?? (method_exists($notification, 'messageGroup') ? $notification->messageGroup() : null);
 
                 if (method_exists($notification, 'withMessageGroups')) {
                     $messageGroup = $notification->withMessageGroups($notifiable, $channel) ?? null;
