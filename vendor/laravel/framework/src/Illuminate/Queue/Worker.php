@@ -107,6 +107,13 @@ class Worker
     public static $memoryExceededExitCode;
 
     /**
+     * Indicates if the worker should report job exceptions.
+     *
+     * @var bool
+     */
+    public static $reportJobExceptions = true;
+
+    /**
      * Indicates if the worker should check for the restart signal in the cache.
      *
      * @var bool
@@ -255,7 +262,7 @@ class Worker
                 ));
             }
 
-            $this->kill(static::EXIT_ERROR, $options);
+            $this->kill(static::EXIT_ERROR, $options, WorkerStopReason::TimedOut);
         }, true);
 
         pcntl_alarm(
@@ -434,7 +441,9 @@ class Worker
         try {
             return $this->process($connectionName, $job, $options);
         } catch (Throwable $e) {
-            $this->exceptions->report($e);
+            if (static::$reportJobExceptions) {
+                $this->exceptions->report($e);
+            }
 
             $this->stopWorkerIfLostConnection($e);
         }
@@ -839,11 +848,12 @@ class Worker
      *
      * @param  int  $status
      * @param  \Illuminate\Queue\WorkerOptions|null  $options
+     * @param  \Illuminate\Queue\WorkerStopReason|null  $reason
      * @return never
      */
-    public function kill($status = 0, $options = null)
+    public function kill($status = 0, $options = null, $reason = null)
     {
-        $this->events->dispatch(new WorkerStopping($status, $options));
+        $this->events->dispatch(new WorkerStopping($status, $options, $reason));
 
         if (extension_loaded('posix')) {
             posix_kill(getmypid(), SIGKILL);
