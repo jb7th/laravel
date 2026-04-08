@@ -2,6 +2,32 @@
 
 All notable changes of the PHPUnit 12.5 release series are documented in this file using the [Keep a CHANGELOG](https://keepachangelog.com/) principles.
 
+## [12.5.16] - 2026-04-03
+
+### Added
+
+* [#6547](https://github.com/sebastianbergmann/phpunit/pull/6547): Support for `%r...%r` in `EXPECTF` section
+
+### Fixed
+
+* [#6025](https://github.com/sebastianbergmann/phpunit/issues/6025): `FILE_EXTERNAL` breaks `__DIR__`
+* [#6351](https://github.com/sebastianbergmann/phpunit/issues/6351): No warning when the same test runner extension is configured more than once
+* [#6433](https://github.com/sebastianbergmann/phpunit/issues/6433): Logic in `TestSuiteLoader` is brittle and causes "Class FooTest not found" even for valid tests in valid filenames
+* [#6463](https://github.com/sebastianbergmann/phpunit/issues/6463): Process Isolation fails on non-serializable globals and quietly ignore closures
+
+## [12.5.15] - 2026-03-31
+
+### Changed
+
+* [#4440](https://github.com/sebastianbergmann/phpunit/issues/4440): Improve error when configured code coverage file list is empty
+* [#6549](https://github.com/sebastianbergmann/phpunit/pull/6549): Allow to stub both hooks of non-virtual properties
+
+### Fixed
+
+* [#6529](https://github.com/sebastianbergmann/phpunit/pull/6529): Git "detached HEAD state" in Open Test Reporting (OTR) XML logger not handled properly
+* [#6545](https://github.com/sebastianbergmann/phpunit/issues/6545): Stubbing a class with set property hook leaves property uninitialized by default
+* The `RegularExpression` and `StringMatchesFormatDescription` did not handle `preg_match()` errors such as `Compilation failed: regular expression is too large`
+
 ## [12.5.14] - 2026-02-18
 
 ### Fixed
@@ -122,6 +148,8 @@ All notable changes of the PHPUnit 12.5 release series are documented in this fi
 * [#6380](https://github.com/sebastianbergmann/phpunit/pull/6380): Allow `Throwable` in `expectExceptionObject()`
 * A PHPUnit notice is now emitted for test methods that create a mock object but do not configure an expectation for it
 
+[12.5.16]: https://github.com/sebastianbergmann/phpunit/compare/12.5.15...12.5.16
+[12.5.15]: https://github.com/sebastianbergmann/phpunit/compare/12.5.14...12.5.15
 [12.5.14]: https://github.com/sebastianbergmann/phpunit/compare/12.5.13...12.5.14
 [12.5.13]: https://github.com/sebastianbergmann/phpunit/compare/12.5.12...12.5.13
 [12.5.12]: https://github.com/sebastianbergmann/phpunit/compare/12.5.11...12.5.12
