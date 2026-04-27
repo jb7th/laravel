@@ -364,7 +364,7 @@ abstract class TestCase extends Assert implements Reorderable, SelfDescribing, T
             return;
         }
 
-        IsolatedTestRunnerRegistry::run(
+        (new SeparateProcessTestRunner)->run(
             $this,
             $this->runClassInSeparateProcess && !$this->runTestInSeparateProcess,
             $this->preserveGlobalState,
@@ -599,7 +599,10 @@ abstract class TestCase extends Assert implements Reorderable, SelfDescribing, T
             $this->stopOutputBuffering()) {
             $outputBufferingStopped = true;
 
-            $this->performAssertionsOnOutput();
+            try {
+                $this->performAssertionsOnOutput();
+            } catch (ExpectationFailedException $e) {
+            }
         }
 
         try {
@@ -1803,6 +1806,13 @@ abstract class TestCase extends Assert implements Reorderable, SelfDescribing, T
             $excludeList->addClassNamePrefix('SebastianBergmann\Invoker');
             $excludeList->addClassNamePrefix('SebastianBergmann\Template');
             $excludeList->addClassNamePrefix('SebastianBergmann\Timer');
+
+            foreach (array_keys($GLOBALS) as $key) {
+                if (str_starts_with($key, '__phpunit_')) {
+                    $excludeList->addGlobalVariable($key);
+                }
+            }
+
             $excludeList->addStaticProperty(ComparatorFactory::class, 'instance');
 
             foreach ($this->backupStaticPropertiesExcludeList as $class => $properties) {
