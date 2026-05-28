@@ -947,6 +947,10 @@ trait ValidatesAttributes
             return false;
         }
 
+        if (preg_match('/[\r\n]/', (string) $value) > 0) {
+            return false;
+        }
+
         $validations = (new Collection($parameters))
             ->unique()
             ->map(fn ($validation) => match (true) {
@@ -1452,10 +1456,9 @@ trait ValidatesAttributes
      *
      * @param  string  $attribute
      * @param  mixed  $value
-     * @param  array<int, int|string>  $parameters
      * @return bool
      */
-    public function validateLowercase($attribute, $value, $parameters)
+    public function validateLowercase($attribute, $value)
     {
         return is_string($value) && Str::lower($value) === $value;
     }
@@ -1465,10 +1468,9 @@ trait ValidatesAttributes
      *
      * @param  string  $attribute
      * @param  mixed  $value
-     * @param  array<int, int|string>  $parameters
      * @return bool
      */
-    public function validateUppercase($attribute, $value, $parameters)
+    public function validateUppercase($attribute, $value)
     {
         return is_string($value) && Str::upper($value) === $value;
     }
@@ -2648,7 +2650,11 @@ trait ValidatesAttributes
      */
     public function validateStartsWith($attribute, $value, $parameters)
     {
-        return is_string($value) && Str::startsWith($value, $parameters);
+        if (is_string($value) || is_numeric($value)) {
+            return Str::startsWith((string) $value, $parameters);
+        }
+
+        return false;
     }
 
     /**
@@ -2661,7 +2667,11 @@ trait ValidatesAttributes
      */
     public function validateDoesntStartWith($attribute, $value, $parameters)
     {
-        return is_string($value) && ! Str::startsWith($value, $parameters);
+        if (is_string($value) || is_numeric($value)) {
+            return ! Str::startsWith((string) $value, $parameters);
+        }
+
+        return false;
     }
 
     /**
@@ -2674,7 +2684,11 @@ trait ValidatesAttributes
      */
     public function validateEndsWith($attribute, $value, $parameters)
     {
-        return is_string($value) && Str::endsWith($value, $parameters);
+        if (is_string($value) || is_numeric($value)) {
+            return Str::endsWith((string) $value, $parameters);
+        }
+
+        return false;
     }
 
     /**
@@ -2687,7 +2701,11 @@ trait ValidatesAttributes
      */
     public function validateDoesntEndWith($attribute, $value, $parameters)
     {
-        return is_string($value) && ! Str::endsWith($value, $parameters);
+        if (is_string($value) || is_numeric($value)) {
+            return ! Str::endsWith((string) $value, $parameters);
+        }
+
+        return false;
     }
 
     /**
