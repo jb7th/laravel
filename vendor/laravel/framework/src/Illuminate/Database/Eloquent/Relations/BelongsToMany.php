@@ -375,7 +375,7 @@ class BelongsToMany extends Relation
     /**
      * Set a where clause for a pivot table column.
      *
-     * @param  string|\Illuminate\Contracts\Database\Query\Expression  $column
+     * @param  (\Closure(\Illuminate\Database\Eloquent\Builder<TPivotModel>): mixed)|string|\Illuminate\Contracts\Database\Query\Expression  $column
      * @param  mixed  $operator
      * @param  mixed  $value
      * @param  string  $boolean
@@ -383,6 +383,18 @@ class BelongsToMany extends Relation
      */
     public function wherePivot($column, $operator = null, $value = null, $boolean = 'and')
     {
+        if ($column instanceof Closure) {
+            $pivotQuery = (new ($this->getPivotClass()))
+                ->setTable($this->table)
+                ->newQueryWithoutRelationships();
+
+            $column($pivotQuery);
+
+            $this->query->getQuery()->addNestedWhereQuery($pivotQuery->getQuery(), $boolean);
+
+            return $this;
+        }
+
         $this->pivotWheres[] = func_get_args();
 
         return $this->where($this->qualifyPivotColumn($column), $operator, $value, $boolean);
@@ -458,7 +470,7 @@ class BelongsToMany extends Relation
     /**
      * Set an "or where" clause for a pivot table column.
      *
-     * @param  string|\Illuminate\Contracts\Database\Query\Expression  $column
+     * @param  (\Closure(\Illuminate\Database\Eloquent\Builder<TPivotModel>): mixed)|string|\Illuminate\Contracts\Database\Query\Expression  $column
      * @param  mixed  $operator
      * @param  mixed  $value
      * @return $this
@@ -1327,7 +1339,7 @@ class BelongsToMany extends Relation
         // the related model's timestamps, to make sure these all reflect the changes
         // to the parent models. This will help us keep any caching synced up here.
         if (count($ids = $this->allRelatedIds()) > 0) {
-            $this->getRelated()->newQueryWithoutRelationships()->whereKey($ids)->update($columns);
+            $this->getRelated()->newQueryWithoutRelationships()->whereIn($this->getQualifiedRelatedKeyName(), $ids)->update($columns);
         }
     }
 
@@ -1687,7 +1699,7 @@ class BelongsToMany extends Relation
     /**
      * Get the pivot columns for this relationship.
      *
-     * @return array
+     * @return array<string|\Illuminate\Contracts\Database\Query\Expression>
      */
     public function getPivotColumns()
     {

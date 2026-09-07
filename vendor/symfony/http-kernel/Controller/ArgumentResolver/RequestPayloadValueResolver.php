@@ -209,8 +209,10 @@ class RequestPayloadValueResolver implements ValueResolverInterface, EventSubscr
 
     public static function getSubscribedEvents(): array
     {
+        // Keep this priority lower than ControllerAttributesListener (-10000) so that gate
+        // attributes such as #[IsGranted] are handled before the payload is mapped.
         return [
-            KernelEvents::CONTROLLER_ARGUMENTS => 'onKernelControllerArguments',
+            KernelEvents::CONTROLLER_ARGUMENTS => ['onKernelControllerArguments', -10100],
         ];
     }
 
@@ -346,7 +348,9 @@ class RequestPayloadValueResolver implements ValueResolverInterface, EventSubscr
             foreach (array_pop($stack) as $v) {
                 if (\is_array($v)) {
                     $stack[] = $v;
-                } elseif (!\is_string($v)) {
+                } elseif (!\is_string($v) && !\is_object($v)) {
+                    // uploaded files are merged into the payload of a "form" request; being objects,
+                    // they are not scalars and must not make the payload look like a typed one
                     return true;
                 }
             }

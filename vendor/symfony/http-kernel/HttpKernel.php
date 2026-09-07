@@ -85,7 +85,7 @@ class HttpKernel implements HttpKernelInterface, TerminableInterface
             if ($e instanceof RequestExceptionInterface) {
                 $e = new BadRequestHttpException($e->getMessage(), $e);
             }
-            if (false === $catch) {
+            if (!$catch) {
                 $this->finishRequest($request, $type, $controllerMetadata);
 
                 throw $e;
@@ -216,7 +216,7 @@ class HttpKernel implements HttpKernelInterface, TerminableInterface
      */
     private function filterResponse(Response $response, Request $request, int $type, ?ControllerMetadata $controllerMetadata = null): Response
     {
-        $event = new ResponseEvent($this, $request, $type, $response, $controllerMetadata);
+        $event = new ResponseEvent($this, $request, $type, $response, $controllerMetadata instanceof ControllerArgumentsMetadata ? $controllerMetadata : null);
 
         $this->dispatcher->dispatch($event, KernelEvents::RESPONSE);
 
